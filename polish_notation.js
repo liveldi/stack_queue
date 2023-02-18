@@ -10,24 +10,24 @@ function polishNotation(expression) {
 
         if (!isNaN(numberedEl)) {
             stack.push(numberedEl);
-            continue;
+            continue; 
         }
 
-        const firstNum = stack.pop();
-        const secondNum = stack.pop();
+        const firstElement = stack.pop();
+        const secondElement = stack.pop();
 
         switch (el) {
             case '+':
-                stack.push(firstNum + secondNum);
+                stack.push(firstElement + secondElement);
                 break;
             case '-':
-                stack.push(firstNum - secondNum);
+                stack.push(firstElement - secondElement);
                 break;
             case '/':
-                stack.push(firstNum / secondNum);
+                stack.push(firstElement / secondElement);
                 break;
             case '*':
-                stack.push(firstNum * secondNum);
+                stack.push(firstElement * secondElement);
                 break;
         }
     }
@@ -35,6 +35,8 @@ function polishNotation(expression) {
     return stack[0];
 }
 
+console.log(polishNotation('123.456'), 123.456);
+console.log(polishNotation('+ -5 5'), 0);
 console.log(polishNotation('+ 3 5'), 8);
 console.log(polishNotation('* + 2 2 3'), 12);
 console.log(polishNotation('/ + 3 5 * 2 2'), 2);
