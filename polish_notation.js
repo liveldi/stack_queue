@@ -30,11 +30,11 @@ function polishNotation(expression) {
                 stack.push(firstNum * secondNum);
                 break;
         }
-
-        return result[0];
     }
+
+    return stack[0];
 }
 
-console.log(calculate('+ 3 5'), 8);
-console.log(calculate('* + 2 2 3'), 12);
-console.log(calculate('/ + 3 5 * 2 2'), 2);
+console.log(polishNotation('+ 3 5'), 8);
+console.log(polishNotation('* + 2 2 3'), 12);
+console.log(polishNotation('/ + 3 5 * 2 2'), 2);

@@ -12,7 +12,7 @@ function flatten(...stack) {
         result.push(el);
     }
 
-    result;
+    return result;
 }
 
 console.log(flatten(1, [2, [[3]]], 4, 5, [6, [7]]));
